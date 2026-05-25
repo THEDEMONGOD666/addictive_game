@@ -1,0 +1,119 @@
+[gd_scene load_steps=23 format=3 uid="uid://r2i8upc8lejy"]
+
+[ext_resource type="Script" path="res://script/user.gd" id="1_5wd4b"]
+[ext_resource type="Texture2D" uid="uid://ctu5b24canwnb" path="res://resource/Warrior-free/attack01/attack-1.png" id="2_veyjs"]
+[ext_resource type="Texture2D" uid="uid://dknulncgoykxf" path="res://resource/Warrior-free/attack01/attack-2.png" id="3_lif7s"]
+[ext_resource type="Texture2D" uid="uid://bh43u2trd00jb" path="res://resource/Warrior-free/attack01/attack-3.png" id="4_xpiew"]
+[ext_resource type="Texture2D" uid="uid://duvvra1vqu22r" path="res://resource/Warrior-free/attack01/attack-4.png" id="5_yw36o"]
+[ext_resource type="Texture2D" uid="uid://bw2atd2ix2myr" path="res://resource/Warrior-free/get-hit/get-hit-1.png" id="6_nild7"]
+[ext_resource type="Texture2D" uid="uid://dfflimm1n6bem" path="res://resource/Warrior-free/get-hit/get-hit-2.png" id="7_rjjhv"]
+[ext_resource type="Texture2D" uid="uid://cuvmsbeoux76w" path="res://resource/Warrior-free/get-hit/get-hit-3.png" id="8_7yywe"]
+[ext_resource type="Texture2D" uid="uid://cgrsk08wh5il6" path="res://resource/Warrior-free/get-hit/get-hit-4.png" id="9_8g2ho"]
+[ext_resource type="Texture2D" uid="uid://d3hrjk1eqmqid" path="res://resource/Warrior-free/idle/idle-1.png" id="10_b2wp1"]
+[ext_resource type="Texture2D" uid="uid://crmt0ett6sb8v" path="res://resource/Warrior-free/idle/idle-2.png" id="11_b5qvr"]
+[ext_resource type="Texture2D" uid="uid://b2ix1b1mw17rj" path="res://resource/Warrior-free/idle/idle-3.png" id="12_beep1"]
+[ext_resource type="Texture2D" uid="uid://bso2bqo574pd4" path="res://resource/Warrior-free/idle/idle-4.png" id="13_7kmn3"]
+[ext_resource type="Texture2D" uid="uid://b1godjkakvsyh" path="res://resource/Warrior-free/idle/idle-5.png" id="14_7abog"]
+[ext_resource type="Texture2D" uid="uid://dnjtyqjkax23g" path="res://resource/Warrior-free/walk/walk-R-1.png" id="15_1rae3"]
+[ext_resource type="Texture2D" uid="uid://bjxrcfcgl2xx3" path="res://resource/Warrior-free/walk/walk-R-2.png" id="16_vbfy4"]
+[ext_resource type="Texture2D" uid="uid://r4tmbbkr2c3s" path="res://resource/Warrior-free/walk/walk-R-3.png" id="17_i2btd"]
+[ext_resource type="Texture2D" uid="uid://cu0ppqhv3ipma" path="res://resource/Warrior-free/walk/walk-R-4.png" id="18_acvch"]
+[ext_resource type="Texture2D" uid="uid://4p8ic8e1nep1" path="res://resource/Warrior-free/walk/walk-R-5.png" id="19_c4ljt"]
+[ext_resource type="Texture2D" uid="uid://bv35pmxed8rnk" path="res://resource/Warrior-free/walk/walk-R-6.png" id="20_xp2d4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8v28i"]
+radius = 14.0
+height = 60.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlw4x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_veyjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lif7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xpiew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yw36o")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nild7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rjjhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7yywe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8g2ho")
+}],
+"loop": true,
+"name": &"get-hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_b2wp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b5qvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_beep1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7kmn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7abog")
+}],
+"loop": true,
+"name": &"idle_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_1rae3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vbfy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i2btd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_acvch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_c4ljt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_xp2d4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_5wd4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_8v28i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_vlw4x")
+animation = &"attack"
+frame_progress = 0.875304
