@@ -22,8 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://bv35pmxed8rnk" path="res://resource/Warrior-free/walk/walk-R-6.png" id="20_xp2d4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8v28i"]
-radius = 14.0
-height = 60.0
+radius = 22.0
+height = 62.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vlw4x"]
 animations = [{
@@ -114,6 +114,9 @@ script = ExtResource("1_5wd4b")
 shape = SubResource("CapsuleShape2D_8v28i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-0.500001, 0.749999)
+scale = Vector2(1.34375, 1.45313)
 sprite_frames = SubResource("SpriteFrames_vlw4x")
 animation = &"attack"
-frame_progress = 0.875304
+
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]

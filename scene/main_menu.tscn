@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8s5lynad8etd"]
+[gd_scene load_steps=3 format=3 uid="uid://b8s5lynad8etd"]
+
+[ext_resource type="Texture2D" uid="uid://0i4uyeqa0d20" path="res://resource/main_menu2.jpg" id="1_m2v3x"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_rvf5o"]
 file = "res://resource.main_ani_menu.ovg"
@@ -6,6 +8,7 @@ file = "res://resource.main_ani_menu.ovg"
 [node name="Node2D" type="Node2D"]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 texture_filter = 1
 offset_right = 1920.0
 offset_bottom = 1088.0
@@ -13,6 +16,7 @@ scale = Vector2(0.6017, 0.593321)
 alignment = 1
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="VBoxContainer"]
+visible = false
 texture_filter = 2
 layout_mode = 2
 size_flags_vertical = 0
@@ -20,3 +24,15 @@ stream = SubResource("VideoStreamTheora_rvf5o")
 autoplay = true
 loop = true
 buffering_msec = 1000
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 326.5)
+scale = Vector2(1.12695, 1.17174)
+texture = ExtResource("1_m2v3x")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+visible = false
+offset_left = 286.0
+offset_top = -99.0
+offset_right = 485.0
+offset_bottom = -56.0
