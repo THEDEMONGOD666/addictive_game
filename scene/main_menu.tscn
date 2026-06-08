@@ -1,29 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8s5lynad8etd"]
+[gd_scene load_steps=4 format=3 uid="uid://b8s5lynad8etd"]
 
-[ext_resource type="Texture2D" uid="uid://0i4uyeqa0d20" path="res://resource/main_menu2.jpg" id="1_m2v3x"]
+[ext_resource type="Texture2D" uid="uid://d0gfvwbyothe3" path="res://resource/main_menu2.jpg" id="1_m2v3x"]
+[ext_resource type="Script" path="res://script/button.gd" id="2_qi8ve"]
 
-[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_rvf5o"]
-file = "res://resource.main_ani_menu.ovg"
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p0fty"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 64.59
+initial_velocity_max = 327.77
+angular_velocity_min = -189.38
+angular_velocity_max = -135.79
+gravity = Vector3(-10, -10, 10)
+scale_min = 0.0
+scale_max = 7.44
+scale_over_velocity_min = 697.26
+scale_over_velocity_max = 1000.0
+color = Color(0.762214, 0.722041, 0.988621, 1)
+anim_speed_min = 12.63
+anim_speed_max = 13.74
+anim_offset_min = 0.2084
+anim_offset_max = 0.2853
+turbulence_noise_strength = 1.05
 
 [node name="Node2D" type="Node2D"]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
-texture_filter = 1
-offset_right = 1920.0
-offset_bottom = 1088.0
-scale = Vector2(0.6017, 0.593321)
-alignment = 1
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="VBoxContainer"]
-visible = false
-texture_filter = 2
-layout_mode = 2
-size_flags_vertical = 0
-stream = SubResource("VideoStreamTheora_rvf5o")
-autoplay = true
-loop = true
-buffering_msec = 1000
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 326.5)
@@ -31,8 +31,16 @@ scale = Vector2(1.12695, 1.17174)
 texture = ExtResource("1_m2v3x")
 
 [node name="Button" type="Button" parent="Sprite2D"]
-visible = false
-offset_left = 286.0
-offset_top = -99.0
-offset_right = 485.0
-offset_bottom = -56.0
+offset_left = 304.0
+offset_top = -94.0
+offset_right = 469.0
+offset_bottom = -57.0
+flat = true
+script = ExtResource("2_qi8ve")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(574, 288)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_p0fty")
+
+[connection signal="pressed" from="Sprite2D/Button" to="Sprite2D/Button" method="_on_pressed"]
