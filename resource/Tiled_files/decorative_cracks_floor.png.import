@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnd0krodic322"
-path="res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"
+uid="uid://c76rtnsb54txu"
+path="res://.godot/imported/decorative_cracks_floor.png-2e314dea4407f071aecae649b61003a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"]
+source_file="res://resource/Tiled_files/decorative_cracks_floor.png"
+dest_files=["res://.godot/imported/decorative_cracks_floor.png-2e314dea4407f071aecae649b61003a5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnd0krodic322"
-path="res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"
+uid="uid://nvklhoy4cpaa"
+path="res://.godot/imported/TAX_meanu.jpeg-bb45147d9a837fa30cb4971775430fa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"]
+source_file="res://resource/TAX_meanu.jpeg"
+dest_files=["res://.godot/imported/TAX_meanu.jpeg-bb45147d9a837fa30cb4971775430fa2.ctex"]
 
 [params]
 

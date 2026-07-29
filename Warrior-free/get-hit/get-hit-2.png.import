@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnd0krodic322"
-path="res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"
+uid="uid://dfflimm1n6bem"
+path="res://.godot/imported/get-hit-2.png-3dcd0b497e9cca5b5b5b2316db786e12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"]
+source_file="res://Warrior-free/get-hit/get-hit-2.png"
+dest_files=["res://.godot/imported/get-hit-2.png-3dcd0b497e9cca5b5b5b2316db786e12.ctex"]
 
 [params]
 

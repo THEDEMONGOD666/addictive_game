@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnd0krodic322"
-path="res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"
+uid="uid://dh271pd6f4hxb"
+path="res://.godot/imported/Water_coasts_animation.png-ee04d369d979820c3faf18d535d76305.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"]
+source_file="res://resource/PNG/Water_coasts_animation.png"
+dest_files=["res://.godot/imported/Water_coasts_animation.png-ee04d369d979820c3faf18d535d76305.ctex"]
 
 [params]
 

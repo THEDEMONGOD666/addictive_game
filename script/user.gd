@@ -2,9 +2,16 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+@export var health_ui:  Node
+var health:  int = 100
 enum State { NORMAL, ATTACKING, HIT }
 var current_state: State = State.NORMAL
+
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	if health_ui :
+		health_ui.max_value = health
+		health_ui.value = health
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -43,5 +50,15 @@ func handle_sprite_direction() -> void:
 		animated_sprite.flip_h = false
 
 func _on_animated_sprite_2d_animation_finished() -> void:
+	
 	if animated_sprite.animation == "attack" or animated_sprite.animation == "get-hit":
 		current_state = State.NORMAL
+
+func _receive_damage(body: Node2D) -> void:
+	#reduce the health
+	if body.is_in_group("enemy"):
+		print("HIT")
+		health -= 10
+		health_ui.value = health
+	if health <= 0:
+			get_tree().change_scene_to_file("res://scenes/main menu_menu.tscn")

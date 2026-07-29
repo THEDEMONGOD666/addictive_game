@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnd0krodic322"
-path="res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"
+uid="uid://cg7n1t54ljry7"
+path="res://.godot/imported/decorative_cracks_coasts_animation.png-4913a1197ca00bc67ea2d2a210a25017.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"]
+source_file="res://resource/Tiled_files/decorative_cracks_coasts_animation.png"
+dest_files=["res://.godot/imported/decorative_cracks_coasts_animation.png-4913a1197ca00bc67ea2d2a210a25017.ctex"]
 
 [params]
 

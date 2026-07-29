@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnd0krodic322"
-path="res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"
+uid="uid://r4tmbbkr2c3s"
+path="res://.godot/imported/walk-R-3.png-c2daaeeb3a2d269a01ed1fc4c891fe70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-7c28320ba1a19d73da329e918446bd39.ctex"]
+source_file="res://Warrior-free/walk/walk-R-3.png"
+dest_files=["res://.godot/imported/walk-R-3.png-c2daaeeb3a2d269a01ed1fc4c891fe70.ctex"]
 
 [params]
 
