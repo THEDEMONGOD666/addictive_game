@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://dh271pd6f4hxb"
+path="res://.godot/imported/Water_coasts_animation.png-cfdde86a028cb06d528b884c759f6e28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/demon_dungeon/PNG/Water_coasts_animation.png"
+dest_files=["res://.godot/imported/Water_coasts_animation.png-cfdde86a028cb06d528b884c759f6e28.ctex"]
 
 [params]
 

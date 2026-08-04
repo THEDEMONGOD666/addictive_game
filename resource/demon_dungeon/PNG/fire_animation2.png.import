@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://douwafnjsy6m1"
+path="res://.godot/imported/fire_animation2.png-ff4e226c9dff198d70c5f87be67c9422.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/demon_dungeon/PNG/fire_animation2.png"
+dest_files=["res://.godot/imported/fire_animation2.png-ff4e226c9dff198d70c5f87be67c9422.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://b58vvdjn81kao"
+path="res://.godot/imported/projectile.png-4220c712e6d7f62bc4bf5514ae19e2e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/demon_dungeon/Flying Demon 2D Pixel Art/Sprites/projectile.png"
+dest_files=["res://.godot/imported/projectile.png-4220c712e6d7f62bc4bf5514ae19e2e7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://cu0ppqhv3ipma"
+path="res://.godot/imported/walk-R-4.png-76363a16af8c9844f4b0937e4734565f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/Warrior-free/walk/walk-R-4.png"
+dest_files=["res://.godot/imported/walk-R-4.png-76363a16af8c9844f4b0937e4734565f.ctex"]
 
 [params]
 

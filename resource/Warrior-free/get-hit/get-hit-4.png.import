@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://cgrsk08wh5il6"
+path="res://.godot/imported/get-hit-4.png-d25bc630b2273e5637e27394d2b78720.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/Warrior-free/get-hit/get-hit-4.png"
+dest_files=["res://.godot/imported/get-hit-4.png-d25bc630b2273e5637e27394d2b78720.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://dpu7m8lq4y5b2"
+path="res://.godot/imported/decorative_cracks_floor.png-1d6369a60e32ad6e7acace40397de1b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/demon_dungeon/PNG/decorative_cracks_floor.png"
+dest_files=["res://.godot/imported/decorative_cracks_floor.png-1d6369a60e32ad6e7acace40397de1b2.ctex"]
 
 [params]
 

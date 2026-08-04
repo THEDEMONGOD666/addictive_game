@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://chgfsvuw0ib4d"
+path="res://.godot/imported/goblin_scout_v5_weapons_dagger_1_silhouette.png-9935d8b7e80808d94e699d4cc20aecd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/goblin_dungeon/goblin_scout_v5_weapons_dagger_1_silhouette.png"
+dest_files=["res://.godot/imported/goblin_scout_v5_weapons_dagger_1_silhouette.png-9935d8b7e80808d94e699d4cc20aecd3.ctex"]
 
 [params]
 

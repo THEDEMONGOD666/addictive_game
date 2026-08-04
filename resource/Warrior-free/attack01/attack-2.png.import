@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://dknulncgoykxf"
+path="res://.godot/imported/attack-2.png-1f5d13e6a2de93e08b18ef3c812ef0de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/Warrior-free/attack01/attack-2.png"
+dest_files=["res://.godot/imported/attack-2.png-1f5d13e6a2de93e08b18ef3c812ef0de.ctex"]
 
 [params]
 

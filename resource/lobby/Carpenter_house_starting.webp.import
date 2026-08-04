@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://dbfk43aunipy8"
+path="res://.godot/imported/Carpenter_house_starting.webp-1616681ad7efa63e928f4c7bd89dc8d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/lobby/Carpenter_house_starting.webp"
+dest_files=["res://.godot/imported/Carpenter_house_starting.webp-1616681ad7efa63e928f4c7bd89dc8d1.ctex"]
 
 [params]
 

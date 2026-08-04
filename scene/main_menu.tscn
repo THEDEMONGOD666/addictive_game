@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8s5lynad8etd"]
+[gd_scene format=3 uid="uid://b8s5lynad8etd"]
 
 [ext_resource type="Texture2D" uid="uid://b06h5nyjk8toq" path="res://resource/main_menu2.jpg" id="1_m2v3x"]
-[ext_resource type="Script" path="res://script/button.gd" id="2_qi8ve"]
+[ext_resource type="Script" uid="uid://c3n55xyemx5wp" path="res://script/button.gd" id="2_qi8ve"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p0fty"]
 particle_flag_disable_z = true
@@ -23,14 +23,14 @@ anim_offset_min = 0.2084
 anim_offset_max = 0.2853
 turbulence_noise_strength = 1.05
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=202079389]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=256113261]
 position = Vector2(576, 326.5)
 scale = Vector2(1.12695, 1.17174)
 texture = ExtResource("1_m2v3x")
 
-[node name="Button" type="Button" parent="Sprite2D"]
+[node name="Button" type="Button" parent="Sprite2D" unique_id=252339522]
 offset_left = 304.0
 offset_top = -94.0
 offset_right = 469.0
@@ -38,8 +38,8 @@ offset_bottom = -57.0
 flat = true
 script = ExtResource("2_qi8ve")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(574, 288)
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1840139058]
+position = Vector2(574, 223)
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_p0fty")
 

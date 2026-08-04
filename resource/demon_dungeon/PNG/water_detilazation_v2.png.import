@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvifv5v63ker"
-path="res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"
+uid="uid://cialsjibflkst"
+path="res://.godot/imported/water_detilazation_v2.png-4ceacd3c6684f8d4ea97daba012f0c4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/main_menu2.jpg"
-dest_files=["res://.godot/imported/main_menu2.jpg-20cfc7ad44e056115e650410177be9d8.ctex"]
+source_file="res://resource/demon_dungeon/PNG/water_detilazation_v2.png"
+dest_files=["res://.godot/imported/water_detilazation_v2.png-4ceacd3c6684f8d4ea97daba012f0c4d.ctex"]
 
 [params]
 
