@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dvcnm85n4b04d" path="res://resource/lobby/vacaroxa--generic-old-west-graphics--v.1.0/Generic Old West Graphicis/Atlas.png" id="7_dd5k0"]
 [ext_resource type="PackedScene" uid="uid://r2i8upc8lejy" path="res://scene/user.tscn" id="7_ydww0"]
 [ext_resource type="Texture2D" uid="uid://dbfk43aunipy8" path="res://resource/lobby/Carpenter_house_starting.webp" id="8_gult8"]
+[ext_resource type="Script" uid="uid://b0efa2ehe12r4" path="res://script/lobby/bank_ui_open.gd" id="11_aflol"]
+[ext_resource type="Script" uid="uid://b7gk8q3h7bm7n" path="res://script/lobby/bank.gd" id="11_xdxul"]
+[ext_resource type="Script" uid="uid://br8xavetoibtm" path="res://script/lobby/soul_convertion_ui.gd" id="12_o3d87"]
+[ext_resource type="Script" uid="uid://dwgh1b3flqrcu" path="res://script/lobby/soul_converter.gd" id="12_ydww0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o3d87"]
 texture = ExtResource("1_xq30h")
@@ -7437,14 +7441,102 @@ sources/0 = SubResource("TileSetAtlasSource_xdxul")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0715m"]
 size = Vector2(502.11734, 377.8822)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5np"]
+size = Vector2(5.176399, 385.64688)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0ssw"]
+size = Vector2(509.8824, 56.941208)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtkxw"]
+size = Vector2(311.70578, 7.5882187)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kn3vl"]
+size = Vector2(92.82355, 10)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukul8"]
-size = Vector2(34, 37)
+size = Vector2(33, 66)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtjb6"]
+bg_color = Color(0.25224796, 0.21025074, 0.16302553, 0.94509804)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.7137255, 0.5411765, 0.24705882, 1)
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_jrt80"]
+font_color = Color(1, 0.81960785, 0.4, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0715m"]
+font_color = Color(1, 0.81960785, 0.4, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gdrp"]
+bg_color = Color(0, 0.78039217, 0.050980393, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3qsc"]
+bg_color = Color(0.07350739, 0.33301365, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_ul8ff"]
+font_color = Color(1, 0.81960785, 0.4, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydww0"]
+bg_color = Color(2.9841065e-06, 0.58639437, 0.7717416, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d7tp"]
+bg_color = Color(0.10342962, 0.22244269, 0.94058216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdxul"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aflol"]
+bg_color = Color(0.5619042, 0, 0.056414068, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx8mk"]
 size = Vector2(69, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ul8ff"]
-size = Vector2(48, 47)
+size = Vector2(48, 68.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrt80"]
+bg_color = Color(0.10177436, 3.946722e-06, 0.48627424, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.5358845, 4.1873755e-05, 0.43890274, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 13
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54me7"]
 size = Vector2(129, 83)
@@ -7475,14 +7567,144 @@ position = Vector2(0, -20.705963)
 scale = Vector2(1.0000008, 1.0000008)
 shape = SubResource("RectangleShape2D_0715m")
 
-[node name="Node2D" parent="." unique_id=977850147 instance=ExtResource("7_ydww0")]
-position = Vector2(599, 388)
+[node name="StaticBody2D" type="StaticBody2D" parent="CarpenterHouseStarting" unique_id=192970047]
 
-[node name="bank" type="Area2D" parent="." unique_id=1618817634]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarpenterHouseStarting/StaticBody2D" unique_id=1676729308]
+position = Vector2(253.64706, -16.823563)
+scale = Vector2(1.0000006, 1.0000006)
+shape = SubResource("RectangleShape2D_hm5np")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CarpenterHouseStarting/StaticBody2D" unique_id=751672812]
+position = Vector2(-253.64697, -18.11766)
+scale = Vector2(1.0000006, 1.0000006)
+shape = SubResource("RectangleShape2D_hm5np")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CarpenterHouseStarting/StaticBody2D" unique_id=800922486]
+position = Vector2(1.2941589, -183.76477)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_o0ssw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CarpenterHouseStarting/StaticBody2D" unique_id=187076491]
+position = Vector2(93.73532, 169.61763)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_rtkxw")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CarpenterHouseStarting/StaticBody2D" unique_id=966495853]
+position = Vector2(-204.29413, 170.64705)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_kn3vl")
+
+[node name="bank" type="Area2D" parent="." unique_id=1618817634 node_paths=PackedStringArray("canvas_layer")]
+script = ExtResource("11_aflol")
+canvas_layer = NodePath("CanvasLayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bank" unique_id=1490067980]
-position = Vector2(1008, 147.5)
+position = Vector2(1007.5, 162)
 shape = SubResource("RectangleShape2D_ukul8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="bank" unique_id=1270391736]
+visible = false
+
+[node name="Panel" type="Panel" parent="bank/CanvasLayer" unique_id=856342973]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 381.0
+offset_top = 150.0
+offset_right = -352.54065
+offset_bottom = -125.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gtjb6")
+script = ExtResource("11_xdxul")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bank/CanvasLayer/Panel" unique_id=966817237]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = -2.9000244
+offset_bottom = -2.0
+
+[node name="Label" type="Label" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=648079987]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "══════ BANK ══════"
+label_settings = SubResource("LabelSettings_jrt80")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=1256540455]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=2099239912]
+layout_mode = 2
+text = "Gold on hand"
+
+[node name="Label3" type="Label" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=1262485877]
+layout_mode = 2
+text = "Gold in bank"
+
+[node name="Label4" type="Label" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=390293582]
+layout_mode = 2
+text = "Current debt"
+
+[node name="HSeparator2" type="HSeparator" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=33507776]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=675036591]
+layout_mode = 2
+text = "Deposit"
+label_settings = SubResource("LabelSettings_0715m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=1944297581]
+layout_mode = 2
+max_value = 9.223372e+18
+
+[node name="Button" type="Button" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=996157641]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gdrp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n3qsc")
+
+[node name="HSeparator3" type="HSeparator" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=2058298823]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=1082840975]
+layout_mode = 2
+text = "Withdraw"
+label_settings = SubResource("LabelSettings_ul8ff")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinBox2" type="SpinBox" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=655208690]
+layout_mode = 2
+max_value = 9.223372e+18
+rounded = true
+
+[node name="Button2" type="Button" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=1982096833]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ydww0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2d7tp")
+
+[node name="HSeparator4" type="HSeparator" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=152354596]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=1620164533]
+layout_mode = 2
+text = "Loan"
+
+[node name="Label8" type="Label" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=1540257010]
+layout_mode = 2
+text = "50 gold "
+
+[node name="Button3" type="Button" parent="bank/CanvasLayer/Panel/VBoxContainer" unique_id=241280432]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xdxul")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aflol")
 
 [node name="inn" type="Area2D" parent="." unique_id=1282580355]
 
@@ -7490,14 +7712,112 @@ shape = SubResource("RectangleShape2D_ukul8")
 position = Vector2(587.5, 648)
 shape = SubResource("RectangleShape2D_hx8mk")
 
-[node name="soul_convertion" type="Area2D" parent="." unique_id=319991213]
+[node name="soul_convertion" type="Area2D" parent="." unique_id=319991213 node_paths=PackedStringArray("canvas_layer")]
+script = ExtResource("12_o3d87")
+canvas_layer = NodePath("CanvasLayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="soul_convertion" unique_id=856461551]
-position = Vector2(256, 645)
+position = Vector2(256, 634.25)
 shape = SubResource("RectangleShape2D_ul8ff")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="soul_convertion" unique_id=679229936]
+visible = false
+
+[node name="Panel" type="Panel" parent="soul_convertion/CanvasLayer" unique_id=217752038]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 434.0
+offset_top = 185.0
+offset_right = -349.9901
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jrt80")
+script = ExtResource("12_ydww0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="soul_convertion/CanvasLayer/Panel" unique_id=32875721]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=11704109]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8198131, 0.6748316, 0.89360213, 1)
+text = "👻 Soul Converter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=1084309045]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=1489709913]
+layout_mode = 2
+text = "Souls held"
+
+[node name="Label3" type="Label" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=1572918776]
+layout_mode = 2
+text = "Gold balance"
+
+[node name="Label4" type="Label" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=495433223]
+layout_mode = 2
+text = "Market rate"
+
+[node name="HSeparator4" type="HSeparator" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=1059718258]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=654472593]
+layout_mode = 2
+text = "tax"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=698342794]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=341645637]
+layout_mode = 2
+text = "souls to  convert"
+
+[node name="LineEdit" type="LineEdit" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=34085253]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=1747277140]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=832396832]
+layout_mode = 2
+text = "tax deducted "
+
+[node name="Label8" type="Label" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=1146335614]
+layout_mode = 2
+text = "you receive"
+
+[node name="HSeparator7" type="HSeparator" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=839616337]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="soul_convertion/CanvasLayer/Panel/VBoxContainer" unique_id=965739868]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "convert"
 
 [node name="dungeon" type="Area2D" parent="." unique_id=382280524]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dungeon" unique_id=710431047]
 position = Vector2(601, 22)
 shape = SubResource("RectangleShape2D_54me7")
+
+[node name="Node2D" parent="." unique_id=977850147 instance=ExtResource("7_ydww0")]
+position = Vector2(599, 388)
+
+[connection signal="body_entered" from="bank" to="bank" method="_on_body_entered"]
+[connection signal="body_exited" from="bank" to="bank" method="_on_body_exited"]
+[connection signal="body_entered" from="soul_convertion" to="soul_convertion" method="_on_body_entered"]
+[connection signal="body_exited" from="soul_convertion" to="soul_convertion" method="_on_body_exited"]

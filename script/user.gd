@@ -1,64 +1,81 @@
 extends CharacterBody2D
 
 @export var speed: float = 200.0
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@export var health_ui:  Node
-var health:  int = 100
-enum State { NORMAL, ATTACKING, HIT }
-var current_state: State = State.NORMAL
+@export var health_ui: Node
+
+var health: int = 100
+var is_attacking: bool = false
+var is_stunned: bool = false
+
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var attack_area = $Area2D
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	if health_ui :
-		health_ui.max_value = health
-		health_ui.value = health
+	update_ui()
 
 func _physics_process(delta: float) -> void:
-	match current_state:
-		State.NORMAL:
-			handle_movement_input()
-			handle_animation_normal()
-		State.ATTACKING:
-			velocity = Vector2.ZERO
-		State.HIT:
-			velocity = Vector2.ZERO
-	move_and_slide()
-	handle_sprite_direction()
-
-func handle_movement_input() -> void:
-	var input_vector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = input_vector.normalized() * speed
-	if Input.is_action_just_pressed("attack"):
-		current_state = State.ATTACKING
+	if is_attacking == true or is_stunned == true:
 		velocity = Vector2.ZERO
-		animated_sprite.stop()
-		animated_sprite.play("attack")
-
-func handle_animation_normal() -> void:
-	if current_state != State.NORMAL:
-		return
-	if velocity != Vector2.ZERO:
-		animated_sprite.play("walk")
 	else:
-		animated_sprite.play("idle_1")
+		var input_vector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		velocity = input_vector.normalized() * speed
+		
+		if velocity != Vector2.ZERO:
+			animated_sprite.play("walk")
+		else:
+			animated_sprite.play("idle_1")
+			
 
-func handle_sprite_direction() -> void:
-	var mouse_pos = get_global_mouse_position()
-	if mouse_pos.x < global_position.x:
-		animated_sprite.flip_h = true
-	else:
-		animated_sprite.flip_h = false
+	move_and_slide()
+	if is_stunned == false:
+		if get_global_mouse_position().x < global_position.x:
+			animated_sprite.flip_h = true
+		else:
+			animated_sprite.flip_h = false
+	if Input.is_action_just_pressed("attack"):
+		if is_attacking == false and is_stunned == false:
+			execute_attack()
 
-func _on_animated_sprite_2d_animation_finished() -> void:
+func execute_attack() -> void:
+	is_attacking = true
+	animated_sprite.play("attack")
+	var targets = attack_area.get_overlapping_bodies()
+	print(targets)
+	for body in targets:
+		if body == self:
+			continue
+		if body.has_method("take_damage"):
+			body.take_damage()
+
+func _receive_damage(damage_amount: int) -> void:
+	if is_stunned == true or health <= 0:
+		return 
+	health -= damage_amount
+	update_ui()
 	
-	if animated_sprite.animation == "attack" or animated_sprite.animation == "get-hit":
-		current_state = State.NORMAL
-
-func _receive_damage(body: Node2D) -> void:
-	#reduce the health
-	if body.is_in_group("enemy"):
-		print("HIT")
-		health -= 10
-		health_ui.value = health
 	if health <= 0:
-			get_tree().change_scene_to_file("res://scenes/main menu_menu.tscn")
+		get_tree().reload_current_scene()
+	else:
+		is_stunned = true
+		is_attacking = false
+		animated_sprite.play("get-hit")
+		var stun_timer = get_tree().create_timer(0.5)
+		stun_timer.timeout.connect(_on_stun_timeout)
+
+func _on_stun_timeout() -> void:
+	is_stunned = false
+
+func _on_healing_timer_timeout() -> void:
+	if health > 0 and health < 100 and is_stunned == false:
+		health += 2
+		if health > 100:
+			health = 100
+		update_ui()
+
+func update_ui() -> void:
+	if health_ui:
+		health_ui.max_value = 100
+		health_ui.value = health
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "attack":
+		is_attacking = false

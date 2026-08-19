@@ -21,6 +21,8 @@ config/icon="res://icon.svg"
 [display]
 
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://kghtjorbmhpi"
+mouse_cursor/custom_image_hotspot=Vector2(10, 10)
 
 [input]
 
