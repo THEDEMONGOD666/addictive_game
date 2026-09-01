@@ -157,7 +157,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_0715m")
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="." unique_id=1699407086]
-wait_time = 1.5
+wait_time = 0.5
 autostart = true
 
 [connection signal="animation_finished" from="user/AnimatedSprite2D" to="user" method="_on_animated_sprite_2d_animation_finished"]

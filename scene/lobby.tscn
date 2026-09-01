@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://b7gk8q3h7bm7n" path="res://script/lobby/bank.gd" id="11_xdxul"]
 [ext_resource type="Script" uid="uid://br8xavetoibtm" path="res://script/lobby/soul_convertion_ui.gd" id="12_o3d87"]
 [ext_resource type="Script" uid="uid://dwgh1b3flqrcu" path="res://script/lobby/soul_converter.gd" id="12_ydww0"]
+[ext_resource type="Script" uid="uid://xnxiw68ws5ho" path="res://script/lobby/dungeon_tp.gd" id="14_2d7tp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o3d87"]
 texture = ExtResource("1_xq30h")
@@ -7541,6 +7542,9 @@ corner_detail = 13
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54me7"]
 size = Vector2(129, 83)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0715m"]
+radius = 24.020824
+
 [node name="Node2D" type="Node2D" unique_id=1769587699]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1356791691]
@@ -7809,6 +7813,7 @@ layout_mode = 2
 text = "convert"
 
 [node name="dungeon" type="Area2D" parent="." unique_id=382280524]
+script = ExtResource("14_2d7tp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dungeon" unique_id=710431047]
 position = Vector2(601, 22)
@@ -7817,7 +7822,29 @@ shape = SubResource("RectangleShape2D_54me7")
 [node name="Node2D" parent="." unique_id=977850147 instance=ExtResource("7_ydww0")]
 position = Vector2(599, 388)
 
+[node name="Area2D" type="Area2D" parent="." unique_id=514971343]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1301057964]
+position = Vector2(1039, 671)
+shape = SubResource("CircleShape2D_0715m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D" unique_id=1953440770]
+visible = false
+
+[node name="Panel" type="Panel" parent="Area2D/CanvasLayer" unique_id=2027075471]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 287.0
+offset_top = 16.0
+offset_right = -289.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="body_entered" from="bank" to="bank" method="_on_body_entered"]
 [connection signal="body_exited" from="bank" to="bank" method="_on_body_exited"]
 [connection signal="body_entered" from="soul_convertion" to="soul_convertion" method="_on_body_entered"]
 [connection signal="body_exited" from="soul_convertion" to="soul_convertion" method="_on_body_exited"]
+[connection signal="body_entered" from="dungeon" to="dungeon" method="_on_body_entered"]

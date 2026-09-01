@@ -2,13 +2,14 @@ extends CharacterBody2D
 
 @export var speed: float = 100.0
 @export var attack_range: float = 60.0
+@onready var collision_shape = $CollisionShape2D
 
 var target_player: CharacterBody2D = null
 var current_health: int = 100
 var is_dead: bool = false
 var is_hurting: bool = false
 
-@onready var health_bar = $"../ProgressBar"
+@onready var health_bar = $ProgressBar
 @onready var sprite = $AnimatedSprite2D
 
 func _ready() -> void:
@@ -80,3 +81,5 @@ func die() -> void:
 	if health_bar:
 		health_bar.visible = false
 	sprite.play("death")
+	if collision_shape:
+		collision_shape.disabled = true

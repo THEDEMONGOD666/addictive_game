@@ -167,7 +167,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rmjt7")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -199,7 +199,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4vnnb")
 }],
 "loop": 1,
-"name": &"idel",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -236,12 +236,14 @@ collision_layer = 3
 script = ExtResource("1_tdwqf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=900950050]
+light_mask = 512
+visibility_layer = 512
 shape = SubResource("RectangleShape2D_jrt80")
+debug_color = Color(0.99851984, 0, 0.1515117, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=997871696]
 sprite_frames = SubResource("SpriteFrames_jrt80")
-animation = &"attack"
-frame_progress = 0.1862515
+animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1567984168]
 visible = false
@@ -249,7 +251,7 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1358358398]
 shape = SubResource("CircleShape2D_jrt80")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1516323445]
+[node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D" unique_id=1516323445]
 visible = false
 offset_left = -64.0
 offset_top = -55.0
@@ -257,6 +259,7 @@ offset_right = 63.0
 offset_bottom = -32.0
 theme_override_styles/background = SubResource("StyleBoxFlat_0715m")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rsxm7")
+show_percentage = false
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_detection_area_body_exited"]

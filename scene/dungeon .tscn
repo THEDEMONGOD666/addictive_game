@@ -3277,9 +3277,6 @@ tile_map_data = PackedByteArray("AAD///D/AQAAAAAAAAD///H/AQAAAAAAAAD///L/AQAAAAA
 tile_set = SubResource("TileSet_sfoef")
 metadata/_edit_horizontal_guides_ = [1461.0, 991.0]
 
-[node name="Node2D" parent="." unique_id=1965427009 instance=ExtResource("11_byik8")]
-position = Vector2(197, 184)
-
 [node name="tp1" type="Node" parent="." unique_id=1133450746]
 
 [node name="Area2D" type="Area2D" parent="tp1" unique_id=2050424888 node_paths=PackedStringArray("target_destination")]
@@ -3401,6 +3398,9 @@ script = ExtResource("15_qybn6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1682480155]
 position = Vector2(1207, 3168.5)
 shape = SubResource("RectangleShape2D_0715m")
+
+[node name="Node2D" parent="." unique_id=977850147 instance=ExtResource("11_byik8")]
+position = Vector2(93, 86)
 
 [connection signal="body_entered" from="tp1/Area2D" to="tp1/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="aesthetics/trap/Area2D" to="aesthetics/trap" method="_on_area_2d_body_entered"]
