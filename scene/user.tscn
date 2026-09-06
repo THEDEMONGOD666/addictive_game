@@ -123,6 +123,7 @@ health_ui = NodePath("../CanvasLayer/ProgressBar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="user" unique_id=1907572179]
 shape = SubResource("CapsuleShape2D_8v28i")
+debug_color = Color(0.9887679, 0.28316948, 1.92523e-07, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="user" unique_id=842888857]
 position = Vector2(1, -7)
@@ -136,11 +137,12 @@ frame_progress = 1.0
 zoom = Vector2(2, 2)
 
 [node name="Area2D" type="Area2D" parent="user" unique_id=664688796]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="user/Area2D" unique_id=1575262836]
 shape = SubResource("CapsuleShape2D_vn73l")
+debug_color = Color(0.6534626, 0.0036223202, 0.9616714, 0.41960785)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=444655862]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8s5lynad8etd"]
 
-[ext_resource type="Texture2D" uid="uid://b06h5nyjk8toq" path="res://resource/main_menu2.jpg" id="1_m2v3x"]
+[ext_resource type="Texture2D" uid="uid://cxvifv5v63ker" path="res://resource/main_menu2.jpg" id="1_m2v3x"]
 [ext_resource type="Script" uid="uid://c3n55xyemx5wp" path="res://script/button.gd" id="2_qi8ve"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p0fty"]

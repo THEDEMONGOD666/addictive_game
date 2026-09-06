@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 			if sprite.animation != "attack":
 				sprite.play("attack")
 				if target_player.has_method("_receive_damage"):
-					target_player._receive_damage(5)
+					target_player._receive_damage(10)
 	else:
 		velocity = Vector2.ZERO
 		sprite.play("idle")

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chgfsvuw0ib4d" path="res://resource/goblin_dungeon/goblin_scout_v5_weapons_dagger_1_silhouette.png" id="1_drhme"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0715m"]
-size = Vector2(32, 34)
+size = Vector2(39, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_guiot"]
 atlas = ExtResource("1_drhme")
@@ -192,7 +192,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cb6ix")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack",
 "speed": 10.0
 }, {
@@ -233,7 +233,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x33gs")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -244,7 +244,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qoa54")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"hurt",
 "speed": 3.0
 }, {
@@ -273,8 +273,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_su6sf")
 }],
-"loop": 1,
-"name": &"ideal",
+"loop": 0,
+"name": &"idle",
 "speed": 9.0
 }, {
 "frames": [{
@@ -302,36 +302,56 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u6kk7")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"run",
 "speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ul8ff"]
-radius = 97.04638
+radius = 117.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrt80"]
+bg_color = Color(0.9843137, 0, 0, 0.6745098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0715m"]
+bg_color = Color(0, 0.7254902, 0, 0.6745098)
 
 [node name="goblin" type="Node2D" unique_id=1994705160]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1870480283]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_akkl6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2043640606]
-visible = false
-position = Vector2(-1, 8)
+light_mask = 512
+visibility_layer = 512
+position = Vector2(2.5, 10)
 shape = SubResource("RectangleShape2D_0715m")
+debug_color = Color(0, 0, 0, 0.3019608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1281482668]
 position = Vector2(1, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ul8ff")
-animation = &"attack"
-frame_progress = 0.015690532
+animation = &"hurt"
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=282726227]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1537754443]
+visible = false
 shape = SubResource("CircleShape2D_ul8ff")
+
+[node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D" unique_id=1263244043]
+visible = false
+offset_left = -38.0
+offset_top = -20.0
+offset_right = 35.615387
+offset_bottom = -9.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jrt80")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0715m")
+show_percentage = false
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_detection_area_body_exited"]

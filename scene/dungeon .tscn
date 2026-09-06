@@ -3391,11 +3391,10 @@ position = Vector2(1097, 3160)
 
 [node name="tp3" type="Node" parent="." unique_id=443851273]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1997838730]
-position = Vector2(28, -14)
+[node name="Area2D" type="Area2D" parent="tp3" unique_id=1997838730]
 script = ExtResource("15_qybn6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1682480155]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tp3/Area2D" unique_id=1682480155]
 position = Vector2(1207, 3168.5)
 shape = SubResource("RectangleShape2D_0715m")
 
@@ -3405,4 +3404,4 @@ position = Vector2(93, 86)
 [connection signal="body_entered" from="tp1/Area2D" to="tp1/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="aesthetics/trap/Area2D" to="aesthetics/trap" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="tp2/Area2D" to="tp2/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="tp3/Area2D" to="tp3/Area2D" method="_on_body_entered"]
