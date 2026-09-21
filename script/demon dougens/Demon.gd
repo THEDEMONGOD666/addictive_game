@@ -8,18 +8,29 @@ var target_player: CharacterBody2D = null
 var current_health: int = 100
 var is_dead: bool = false
 var is_hurting: bool = false
+var soul_scene = preload("res://scene/soul_orb.tscn")
+var base_health = 50
+var base_damage = 10
 
 @onready var health_bar = $ProgressBar
 @onready var sprite = $AnimatedSprite2D
 
+
 func _ready() -> void:
+	apply_scaling()
 	if health_bar:
 		health_bar.visible = false
-		health_bar.max_value = 100
+		health_bar.max_value = current_health
 		health_bar.value = current_health
 
-func _physics_process(delta: float) -> void:
+func apply_scaling():
+	var tier = int(Global.gold / 100)
+	current_health = 100 + (tier * 20)
 
+func _physics_process(delta: float) -> void:
+	
+	target_player._receive_damage(10 + (int(Global.gold / 100) * 5))
+	
 	if is_dead == true or is_hurting == true:
 		return
 		
@@ -83,3 +94,9 @@ func die() -> void:
 	sprite.play("death")
 	if collision_shape:
 		collision_shape.disabled = true
+	await sprite.animation_finished
+	var soul = soul_scene.instantiate()
+	soul.global_position = global_position
+	get_tree().root.add_child(soul)  # change this line
+	print("soul spawned at: " + str(global_position))
+	queue_free()

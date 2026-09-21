@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cu0ppqhv3ipma" path="res://resource/Warrior-free/walk/walk-R-4.png" id="18_acvch"]
 [ext_resource type="Texture2D" uid="uid://4p8ic8e1nep1" path="res://resource/Warrior-free/walk/walk-R-5.png" id="19_c4ljt"]
 [ext_resource type="Texture2D" uid="uid://bv35pmxed8rnk" path="res://resource/Warrior-free/walk/walk-R-6.png" id="20_xp2d4"]
+[ext_resource type="Script" uid="uid://bo33hc1tj8p5g" path="res://script/counter.gd" id="21_v4wg3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8v28i"]
 radius = 8.0
@@ -115,6 +116,17 @@ bg_color = Color(0.91764706, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0715m"]
 bg_color = Color(0.21707961, 0.71812457, 7.70092e-07, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_sqr4o"]
+font_size = 40
+font_color = Color(0.67058825, 0, 1, 1)
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_namya"]
+font_size = 50
+font_color = Color(1, 0.7411765, 0.039215688, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D" unique_id=977850147]
 
 [node name="user" type="CharacterBody2D" parent="." unique_id=994841643 node_paths=PackedStringArray("health_ui")]
@@ -161,6 +173,22 @@ show_percentage = false
 [node name="Timer" type="Timer" parent="." unique_id=1699407086]
 wait_time = 0.5
 autostart = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2078256824]
+script = ExtResource("21_v4wg3")
+
+[node name="soulslabel" type="Label" parent="CanvasLayer2" unique_id=1788434873]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 230.0
+offset_bottom = 56.0
+label_settings = SubResource("LabelSettings_sqr4o")
+
+[node name="goldlabel" type="Label" parent="CanvasLayer2" unique_id=698055443]
+offset_top = 63.0
+offset_right = 231.0
+offset_bottom = 132.0
+label_settings = SubResource("LabelSettings_namya")
 
 [connection signal="animation_finished" from="user/AnimatedSprite2D" to="user" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="user/Area2D" to="user" method="_on_area_2d_area_entered"]

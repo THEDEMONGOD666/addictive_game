@@ -12,7 +12,6 @@ var is_stunned: bool = false
 
 func _ready() -> void:
 	update_ui()
-
 func _physics_process(delta: float) -> void:
 	if is_attacking == true or is_stunned == true:
 		velocity = Vector2.ZERO
@@ -40,7 +39,7 @@ func execute_attack() -> void:
 	is_attacking = true
 	animated_sprite.play("attack")
 	var targets = attack_area.get_overlapping_bodies()
-	print(targets)
+	print("DIE")
 	for body in targets:
 		if body == self:
 			continue
@@ -54,7 +53,9 @@ func _receive_damage(damage_amount: int) -> void:
 	update_ui()
 	
 	if health <= 0:
+		Global.wipe_save()
 		get_tree().reload_current_scene()
+	
 	else:
 		is_stunned = true
 		is_attacking = false

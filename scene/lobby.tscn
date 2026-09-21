@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://br8xavetoibtm" path="res://script/lobby/soul_convertion_ui.gd" id="12_o3d87"]
 [ext_resource type="Script" uid="uid://dwgh1b3flqrcu" path="res://script/lobby/soul_converter.gd" id="12_ydww0"]
 [ext_resource type="Script" uid="uid://xnxiw68ws5ho" path="res://script/lobby/dungeon_tp.gd" id="14_2d7tp"]
+[ext_resource type="Script" uid="uid://clydstlj82xx8" path="res://script/lobby/inn_ui.gd" id="16_rmfs1"]
+[ext_resource type="Script" uid="uid://d3epjthnkhc2q" path="res://script/lobby/inn.gd" id="16_rt0eh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o3d87"]
 texture = ExtResource("1_xq30h")
@@ -7519,9 +7521,6 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx8mk"]
-size = Vector2(69, 64)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ul8ff"]
 size = Vector2(48, 68.5)
 
@@ -7544,6 +7543,34 @@ size = Vector2(129, 83)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0715m"]
 radius = 24.020824
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx8mk"]
+size = Vector2(69, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ukul8"]
+font_size = 50
+font_color = Color(0.44457617, 0.20127818, 0.10322701, 1)
+outline_size = 9
+outline_color = Color(1, 1, 0.8666667, 0.7490196)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hx8mk"]
+font_size = 30
+font_color = Color(1, 0.827451, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_54me7"]
+font_size = 30
+font_color = Color(1, 0.827451, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hm5np"]
+font_size = 34
+font_color = Color(0, 0, 0, 1)
+shadow_size = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_o0ssw"]
+font_size = 70
+font_color = Color(0, 1, 0, 1)
+shadow_size = 11
+shadow_color = Color(1, 1, 1, 1)
 
 [node name="Node2D" type="Node2D" unique_id=1769587699]
 
@@ -7710,12 +7737,6 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_xdxul")
 theme_override_styles/hover = SubResource("StyleBoxFlat_aflol")
 
-[node name="inn" type="Area2D" parent="." unique_id=1282580355]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="inn" unique_id=462727749]
-position = Vector2(587.5, 648)
-shape = SubResource("RectangleShape2D_hx8mk")
-
 [node name="soul_convertion" type="Area2D" parent="." unique_id=319991213 node_paths=PackedStringArray("canvas_layer")]
 script = ExtResource("12_o3d87")
 canvas_layer = NodePath("CanvasLayer")
@@ -7843,8 +7864,75 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="inn" type="Area2D" parent="." unique_id=1282580355 node_paths=PackedStringArray("canvas_layer")]
+script = ExtResource("16_rmfs1")
+canvas_layer = NodePath("CanvasLayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inn" unique_id=462727749]
+position = Vector2(587.5, 648)
+shape = SubResource("RectangleShape2D_hx8mk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="inn" unique_id=190789142]
+visible = false
+
+[node name="Panel" type="Panel" parent="inn/CanvasLayer" unique_id=1388070591]
+offset_left = 304.0
+offset_top = 106.0
+offset_right = 857.68634
+offset_bottom = 542.0
+script = ExtResource("16_rt0eh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="inn/CanvasLayer/Panel" unique_id=217430212]
+layout_mode = 0
+offset_right = 551.0
+offset_bottom = 427.0
+
+[node name="Label" type="Label" parent="inn/CanvasLayer/Panel/VBoxContainer" unique_id=177346441]
+layout_mode = 2
+text = "The Rusty Sword Inn"
+label_settings = SubResource("LabelSettings_ukul8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="inn/CanvasLayer/Panel/VBoxContainer" unique_id=272998006]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="inn/CanvasLayer/Panel/VBoxContainer" unique_id=573393249]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_hx8mk")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="inn/CanvasLayer/Panel/VBoxContainer" unique_id=107196342]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_54me7")
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="inn/CanvasLayer/Panel/VBoxContainer" unique_id=513317308]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="inn/CanvasLayer/Panel/VBoxContainer" unique_id=626620602]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_hm5np")
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="inn/CanvasLayer/Panel/VBoxContainer" unique_id=1041909076]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "EXIT"
+
+[node name="Label5" type="Label" parent="inn/CanvasLayer/Panel/VBoxContainer" unique_id=923529299]
+layout_mode = 2
+text = "PLS COME BACK"
+label_settings = SubResource("LabelSettings_o0ssw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="bank" to="bank" method="_on_body_entered"]
 [connection signal="body_exited" from="bank" to="bank" method="_on_body_exited"]
 [connection signal="body_entered" from="soul_convertion" to="soul_convertion" method="_on_body_entered"]
 [connection signal="body_exited" from="soul_convertion" to="soul_convertion" method="_on_body_exited"]
 [connection signal="body_entered" from="dungeon" to="dungeon" method="_on_body_entered"]
+[connection signal="body_entered" from="inn" to="inn" method="_on_body_entered"]
+[connection signal="body_exited" from="inn" to="inn" method="_on_body_exited"]

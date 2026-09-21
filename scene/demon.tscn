@@ -141,7 +141,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_73cko")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack",
 "speed": 8.0
 }, {
@@ -181,7 +181,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_geh2j")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -198,7 +198,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4vnnb")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -215,7 +215,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2y75m")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"walk",
 "speed": 8.0
 }]
@@ -243,7 +243,7 @@ debug_color = Color(0.99851984, 0, 0.1515117, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=997871696]
 sprite_frames = SubResource("SpriteFrames_jrt80")
-animation = &"idle"
+animation = &"walk"
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1567984168]
 visible = false

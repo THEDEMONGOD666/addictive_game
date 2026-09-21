@@ -18,6 +18,10 @@ config/name="addictive_game"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://bn6qqpf1imdrm"
+
 [display]
 
 window/stretch/mode="viewport"

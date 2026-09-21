@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://b8s5lynad8etd"]
 
 [ext_resource type="Texture2D" uid="uid://cxvifv5v63ker" path="res://resource/main_menu2.jpg" id="1_m2v3x"]
-[ext_resource type="Script" uid="uid://c3n55xyemx5wp" path="res://script/button.gd" id="2_qi8ve"]
+[ext_resource type="Script" uid="uid://c3n55xyemx5wp" path="res://script/new_game.gd" id="2_qi8ve"]
+[ext_resource type="Script" uid="uid://cegg0gml124me" path="res://script/resume.gd" id="3_0iwki"]
+[ext_resource type="Script" uid="uid://bjqypui4efnas" path="res://script/exit.gd" id="4_sepwh"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p0fty"]
 particle_flag_disable_z = true
@@ -31,12 +33,38 @@ scale = Vector2(1.12695, 1.17174)
 texture = ExtResource("1_m2v3x")
 
 [node name="Button" type="Button" parent="Sprite2D" unique_id=252339522]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 304.0
 offset_top = -94.0
-offset_right = 469.0
-offset_bottom = -57.0
+offset_right = -555.0
+offset_bottom = -616.0
+grow_horizontal = 2
+grow_vertical = 2
 flat = true
 script = ExtResource("2_qi8ve")
+
+[node name="Button2" type="Button" parent="Sprite2D" unique_id=251187190]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 299.9246
+offset_top = -17.495354
+offset_right = -553.7041
+offset_bottom = -538.09094
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("3_0iwki")
+
+[node name="Button3" type="Button" parent="Sprite2D" unique_id=858108475]
+offset_left = 301.69928
+offset_top = 58.460083
+offset_right = 472.95795
+offset_bottom = 97.717926
+flat = true
+script = ExtResource("4_sepwh")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1840139058]
 position = Vector2(574, 223)
@@ -44,3 +72,5 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_p0fty")
 
 [connection signal="pressed" from="Sprite2D/Button" to="Sprite2D/Button" method="_on_pressed"]
+[connection signal="pressed" from="Sprite2D/Button2" to="Sprite2D/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Sprite2D/Button3" to="Sprite2D/Button3" method="_on_pressed"]

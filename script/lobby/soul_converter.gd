@@ -16,6 +16,11 @@ var market_rate = 6
 func _ready():
 	convert_btn.pressed.connect(convert)
 	input_field.text_changed.connect(update_preview)
+	souls = Global.souls
+	gold = Global.gold
+	market_rate = randf_range(0.5, 1.5)
+	input_field.text = str(souls)
+	refresh()
 
 func setup(s, g, rate):
 	souls = s
@@ -49,12 +54,13 @@ func update_preview(new_text):
 
 func convert():
 	var amount = int(input_field.text) if input_field.text.is_valid_int() else 0
-	amount = clamp(amount, 0, souls)
+	amount = clamp(amount, 0, Global.souls)
 	if amount <= 0:
 		return
 	var gross = int(amount * market_rate)
 	var tax = int(gross * get_tax() / 100.0)
-	souls -= amount
-	gold += gross - tax
-	input_field.text = "0"
+	Global.souls -= amount
+	Global.gold += gross - tax
+	souls = Global.souls
+	gold = Global.gold
 	refresh()

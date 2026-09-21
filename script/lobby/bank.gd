@@ -9,11 +9,9 @@ extends Panel
 @onready var withdraw_btn = $VBoxContainer/Button2
 @onready var loan_btn = $VBoxContainer/Button3
 
-var player_gold: int = 198
-var bank_gold: int = 0
-var player_debt: int = 0
 const LOAN_AMOUNT = 50
 const DEBT_LIMIT = 200
+
 func _ready():
 	deposit_btn.pressed.connect(_on_deposit_pressed)
 	withdraw_btn.pressed.connect(_on_withdraw_pressed)
@@ -21,42 +19,42 @@ func _ready():
 	update_ui()
 
 func update_ui():
-	gold_label.text = "Gold on hand: " + str(player_gold)
-	bank_label.text = "Gold in bank: " + str(bank_gold)
-	debt_label.text = "Current debt: " + str(player_debt) + " gold"
+	gold_label.text = "Gold on hand: " + str(Global.gold)
+	bank_label.text = "Gold in bank: " + str(Global.bank_gold)
+	debt_label.text = "Current debt: " + str(Global.debt) + " gold"
 
 func _on_deposit_pressed():
 	var amount = int(deposit_amount.value)
-	if player_gold >= amount and amount > 0:
-		player_gold -= amount
-		bank_gold += amount
+	if Global.gold >= amount and amount > 0:
+		Global.gold -= amount
+		Global.bank_gold += amount
 		update_ui()
 
 func _on_withdraw_pressed():
 	var amount = int(withdraw_amount.value)
-	if bank_gold >= amount and amount > 0:
-		bank_gold -= amount
-		player_gold += amount
+	if Global.bank_gold >= amount and amount > 0:
+		Global.bank_gold -= amount
+		Global.gold += amount
 		update_ui()
 
 func _on_loan_pressed():
-	player_debt += LOAN_AMOUNT
-	player_gold += LOAN_AMOUNT
+	Global.debt += LOAN_AMOUNT
+	Global.gold += LOAN_AMOUNT
 	update_ui()
 
 func apply_floor_effects():
-	if bank_gold > 0:
-		bank_gold = int(bank_gold * 1.05)
- 
-	if player_debt > 0:
-		player_debt = int(player_debt * 1.10)
-   
-	if player_debt > DEBT_LIMIT:
-		var deduction = int(player_debt * 0.20)
-		if player_gold >= deduction:
-			player_gold -= deduction
+	if Global.bank_gold > 0:
+		Global.bank_gold = int(Global.bank_gold * 1.05)
+
+	if Global.debt > 0:
+		Global.debt = int(Global.debt * 1.10)
+
+	if Global.debt > DEBT_LIMIT:
+		var deduction = int(Global.debt * 0.20)
+		if Global.gold >= deduction:
+			Global.gold -= deduction
 		else:
-			bank_gold -= (deduction - player_gold)
-			player_gold = 0
-		player_debt -= deduction
+			Global.bank_gold -= (deduction - Global.gold)
+			Global.gold = 0
+		Global.debt -= deduction
 	update_ui()
