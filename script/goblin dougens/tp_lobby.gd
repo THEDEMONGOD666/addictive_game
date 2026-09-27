@@ -1,5 +1,5 @@
 extends Area2D
-
+# Tp the  user to lobby
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "user":
 		get_tree().call_group("soul", "queue_free")

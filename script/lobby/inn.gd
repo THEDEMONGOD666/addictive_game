@@ -5,21 +5,19 @@ extends Panel
 @onready var message_label = $VBoxContainer/Label4
 @onready var save_btn = $VBoxContainer/Button
 
-var cost = 0
+var cost: int = 0
 
-func _ready():
+
+func _ready() -> void:
 	save_btn.pressed.connect(pay_and_save)
 	message_label.hide()
-	gold_label.text = "Gold: " + str(Global.gold)
-	cost_label.text = "Cost to save: 0 gold"
-	
-func open():
+	# Generate random save cost on open
 	cost = randi_range(10, 50)
 	gold_label.text = "Gold: " + str(Global.gold)
 	cost_label.text = "Cost to save: " + str(cost) + " gold"
-	message_label.hide()
 
-func pay_and_save():
+
+func pay_and_save() -> void:
 	if Global.gold >= cost:
 		Global.gold -= cost
 		Global.save()

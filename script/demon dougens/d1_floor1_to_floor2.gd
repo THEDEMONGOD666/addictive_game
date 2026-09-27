@@ -1,8 +1,7 @@
 extends Area2D
 @export var target_destination: Marker2D 
 
-
-
+#tp 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "user":
 		if target_destination != null:

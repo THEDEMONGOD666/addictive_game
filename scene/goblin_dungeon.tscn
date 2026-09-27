@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cd8i148jqb743" path="res://resource/goblin_dungeon/realistic-white-cloud-png.webp" id="19_gmiva"]
 [ext_resource type="PackedScene" uid="uid://b4aidl3c81y1k" path="res://scene/goblin.tscn" id="22_ik56j"]
 [ext_resource type="Script" uid="uid://8ol15j4ipj5v" path="res://script/goblin dougens/tp_lobby.gd" id="23_yvawo"]
+[ext_resource type="AudioStream" uid="uid://c15dunaylqpbn" path="res://resource/goblin_dungeon/kulakovka-epic-action-268915.mp3" id="24_yvawo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7h02"]
 texture = ExtResource("1_0jdsu")
@@ -915,6 +916,9 @@ sources/10 = SubResource("TileSetAtlasSource_maoj4")
 sources/11 = SubResource("TileSetAtlasSource_qf7ea")
 sources/12 = SubResource("TileSetAtlasSource_dmk7t")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54me7"]
+size = Vector2(37.200012, 24.49474)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sw2v1"]
 texture = ExtResource("11_evmb0")
 0:0/size_in_atlas = Vector2i(2, 2)
@@ -996,6 +1000,14 @@ texture_filter = 1
 position = Vector2(3276.0002, 276.00003)
 scale = Vector2(5.5882354, 5.5882354)
 texture = ExtResource("8_ih4ed")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer2/camps/7" unique_id=1755019185]
+position = Vector2(-4.8316226, -6.4421105)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer2/camps/7/StaticBody2D" unique_id=734703686]
+position = Vector2(5, 4.752636)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_54me7")
 
 [node name="ani" type="TileMapLayer" parent="." unique_id=1660046662]
 tile_map_data = PackedByteArray("AAATABUAAAAAAAAAAAA5ABUAAAAAAAAAAAA4AA0AAAAAAAAAAAATAAwAAAAAAAAAAAAEAAsAAQAAAAAAAABJABMAAQAAAAAAAACb/xMAAAAAAAAAAACr/xMAAAAAAAAAAACf/wwAAAAAAAAAAACa/xoAAQAAAAAAAACa/wwAAQAAAAAAAAC6ABcAAAAAAAAAAADeABcAAAAAAAAAAADeAAkAAAAAAAAAAAC6AAkAAAAAAAAAAAC6ABAAAQAAAAAAAADeABAAAQAAAAAAAACkAAwAAQAAAAAAAACkABMAAQAAAAAAAAD3AAwAAQAAAAAAAAD3ABMAAQAAAAAAAAA=")
@@ -1153,6 +1165,12 @@ position = Vector2(4596, 267)
 shape = SubResource("RectangleShape2D_jrt80")
 
 [node name="Node2D" parent="." unique_id=977850147 instance=ExtResource("13_o47og")]
-position = Vector2(-1994, 264)
+position = Vector2(-1993, 267)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1528065867]
+stream = ExtResource("24_yvawo")
+volume_db = -3.184
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="tp/Area2D" to="tp/Area2D" method="_on_body_entered"]

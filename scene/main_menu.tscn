@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c3n55xyemx5wp" path="res://script/new_game.gd" id="2_qi8ve"]
 [ext_resource type="Script" uid="uid://cegg0gml124me" path="res://script/resume.gd" id="3_0iwki"]
 [ext_resource type="Script" uid="uid://bjqypui4efnas" path="res://script/exit.gd" id="4_sepwh"]
+[ext_resource type="AudioStream" uid="uid://dgwyp8wnw3ign" path="res://resource/main_menu_-_dark.mp3" id="5_sepwh"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p0fty"]
 particle_flag_disable_z = true
@@ -70,6 +71,13 @@ script = ExtResource("4_sepwh")
 position = Vector2(574, 223)
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_p0fty")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=622590515]
+stream = ExtResource("5_sepwh")
+volume_db = 1.061
+autoplay = true
+mix_target = 1
+parameters/looping = true
 
 [connection signal="pressed" from="Sprite2D/Button" to="Sprite2D/Button" method="_on_pressed"]
 [connection signal="pressed" from="Sprite2D/Button2" to="Sprite2D/Button2" method="_on_pressed"]

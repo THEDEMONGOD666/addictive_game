@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://4p8ic8e1nep1" path="res://resource/Warrior-free/walk/walk-R-5.png" id="19_c4ljt"]
 [ext_resource type="Texture2D" uid="uid://bv35pmxed8rnk" path="res://resource/Warrior-free/walk/walk-R-6.png" id="20_xp2d4"]
 [ext_resource type="Script" uid="uid://bo33hc1tj8p5g" path="res://script/counter.gd" id="21_v4wg3"]
+[ext_resource type="AudioStream" uid="uid://bs77isqruvd1p" path="res://resource/Warrior-free/Sword Hit 1.wav" id="22_namya"]
+[ext_resource type="AudioStream" uid="uid://cl1sbmrlbs8n" path="res://resource/Warrior-free/Walking sound effect.wav" id="23_xw25s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8v28i"]
 radius = 8.0
@@ -189,6 +191,15 @@ offset_top = 63.0
 offset_right = 231.0
 offset_bottom = 132.0
 label_settings = SubResource("LabelSettings_namya")
+
+[node name="sword" type="AudioStreamPlayer" parent="." unique_id=1931080365]
+stream = ExtResource("22_namya")
+volume_db = 14.149
+pitch_scale = 0.59
+
+[node name="walk" type="AudioStreamPlayer" parent="." unique_id=327256196]
+stream = ExtResource("23_xw25s")
+volume_db = 24.0
 
 [connection signal="animation_finished" from="user/AnimatedSprite2D" to="user" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="user/Area2D" to="user" method="_on_area_2d_area_entered"]

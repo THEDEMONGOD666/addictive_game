@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://7j7sexdap7fp" path="res://script/demon dougens/d1_floor2_to_floor3.gd" id="13_lxff6"]
 [ext_resource type="PackedScene" uid="uid://divktndwmw74q" path="res://scene/demon.tscn" id="14_0klqh"]
 [ext_resource type="Script" uid="uid://dgimvf6x8hrqs" path="res://script/demon dougens/tp_3.gd" id="15_qybn6"]
+[ext_resource type="AudioStream" uid="uid://b77msbg370bkk" path="res://resource/demon_dungeon/alex-morgan-horror-suspense-tune-579472.mp3" id="16_npc4l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7tcc"]
 texture = ExtResource("2_8x72q")
@@ -3400,6 +3401,13 @@ shape = SubResource("RectangleShape2D_0715m")
 
 [node name="Node2D" parent="." unique_id=977850147 instance=ExtResource("11_byik8")]
 position = Vector2(93, 86)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1914555556]
+stream = ExtResource("16_npc4l")
+volume_db = 5.306
+autoplay = true
+mix_target = 1
+parameters/looping = true
 
 [connection signal="body_entered" from="tp1/Area2D" to="tp1/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="aesthetics/trap/Area2D" to="aesthetics/trap" method="_on_area_2d_body_entered"]

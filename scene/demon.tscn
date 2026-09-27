@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://gor6qi8iputn" path="res://resource/demon_dungeon/Flying Demon 2D Pixel Art/Sprites/without_outline/IDLE.png" id="4_228y2"]
 [ext_resource type="Texture2D" uid="uid://cn4to5xtk3s7p" path="res://resource/demon_dungeon/Flying Demon 2D Pixel Art/Sprites/without_outline/FLYING.png" id="5_x5d3x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrt80"]
-size = Vector2(57, 46.25)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wckkf"]
+radius = 38.0
+height = 78.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aq7p0"]
 atlas = ExtResource("1_0kf4e")
@@ -238,7 +239,7 @@ script = ExtResource("1_tdwqf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=900950050]
 light_mask = 512
 visibility_layer = 512
-shape = SubResource("RectangleShape2D_jrt80")
+shape = SubResource("CapsuleShape2D_wckkf")
 debug_color = Color(0.99851984, 0, 0.1515117, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=997871696]

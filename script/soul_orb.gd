@@ -1,16 +1,20 @@
 extends Area2D
 
-var amount = 3
-var can_pickup = false
+var amount: int = 3
+var can_pickup: bool = false
+
 @onready var sprite = $AnimatedSprite2D
-func _ready():
+
+
+func _ready() -> void:
 	sprite.play("new_animation")
-	print("soul orb exists at: " + str(global_position))
 	body_entered.connect(picked_up)
-	await get_tree().create_timer(0.3).timeout
+	# Short delay before pickup is allowed
+	await get_tree().create_timer(Global.SOUL_DELAY).timeout
 	can_pickup = true
 
-func picked_up(body):
+
+func picked_up(body: Node) -> void:
 	if can_pickup:
 		Global.souls += amount
 		queue_free()

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cnqtjcni8tygq"]
+
+[ext_resource type="Texture2D" uid="uid://dqpnanficdv1j" path="res://resource/tutorial/Screenshot 2026-09-27 175233.png" id="1_p31a4"]
+[ext_resource type="Script" uid="uid://domvawlxvkjjg" path="res://script/tp_lobby1.gd" id="2_8jxoh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p31a4"]
+font_color = Color(1, 0.3529412, 0.3529412, 1)
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8jxoh"]
+font_color = Color(0.39215687, 0, 0.54901963, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_won01"]
+font_color = Color(0.23529412, 0.9411765, 0.9411765, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvmt1"]
+font_color = Color(0.39215687, 1, 0.54901963, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mqdaa"]
+font_color = Color(1, 0.84313726, 0, 1)
+outline_size = 2
+
+[node name="Node2D" type="Node2D" unique_id=1651097208]
+
+[node name="Screenshot20260927175233" type="Sprite2D" parent="." unique_id=1758873691]
+position = Vector2(576.5, 327.50006)
+scale = Vector2(1.2459548, 0.9880061)
+texture = ExtResource("1_p31a4")
+
+[node name="Label" type="Label" parent="Screenshot20260927175233" unique_id=2043199677]
+offset_left = -138.44806
+offset_top = -184.26257
+offset_right = 122.55194
+offset_bottom = -149.74512
+text = "🚪 Dungeon: Fight & Collect Souls"
+label_settings = SubResource("LabelSettings_p31a4")
+
+[node name="Label2" type="Label" parent="Screenshot20260927175233" unique_id=224584928]
+offset_left = -388.05582
+offset_top = 165.9885
+offset_right = -164.05582
+offset_bottom = 214.9885
+text = "💰 Soul Exchange
+"
+label_settings = SubResource("LabelSettings_8jxoh")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Screenshot20260927175233" unique_id=786878966]
+offset_left = 225.93115
+offset_top = 165.9885
+offset_right = 468.93115
+offset_bottom = 214.9885
+text = "💪 Spend Gold ➡️ Get Strong"
+label_settings = SubResource("LabelSettings_won01")
+
+[node name="Label4" type="Label" parent="Screenshot20260927175233" unique_id=1926302083]
+offset_left = -89.48961
+offset_top = 165.9885
+offset_right = 76.51039
+offset_bottom = 188.9885
+text = "🛏️ Rest & Save Game"
+label_settings = SubResource("LabelSettings_nvmt1")
+
+[node name="Label5" type="Label" parent="Screenshot20260927175233" unique_id=761475787]
+offset_left = 294.15192
+offset_top = -167.00386
+offset_right = 334.15192
+offset_bottom = -144.00386
+text = "Bank"
+label_settings = SubResource("LabelSettings_mqdaa")
+
+[node name="Button" type="Button" parent="Screenshot20260927175233" unique_id=345671680]
+offset_left = -459.487
+offset_top = -331.47574
+offset_right = 462.69745
+offset_bottom = 331.47568
+flat = true
+script = ExtResource("2_8jxoh")
+
+[connection signal="pressed" from="Screenshot20260927175233/Button" to="Screenshot20260927175233/Button" method="_on_pressed"]
